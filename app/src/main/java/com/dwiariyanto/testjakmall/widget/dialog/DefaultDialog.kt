@@ -22,13 +22,13 @@ class DefaultDialog(
                 buttonPositive?.let {
                     setPositiveButton(it.text) { dialog, _ ->
                         dialog.dismiss()
-                        it.onClickAction.invoke()
+                        it.onClickAction?.invoke()
                     }
                 }
                 buttonNegative?.let {
-                    setPositiveButton(it.text) { dialog, _ ->
+                    setNegativeButton(it.text) { dialog, _ ->
                         dialog.dismiss()
-                        it.onClickAction.invoke()
+                        it.onClickAction?.invoke()
                     }
                 }
             }
@@ -49,6 +49,6 @@ class DefaultDialog(
 
     data class ButtonData(
         val text: String,
-        val onClickAction: () -> Unit
+        val onClickAction: (() -> Unit)? = null
     )
 }
