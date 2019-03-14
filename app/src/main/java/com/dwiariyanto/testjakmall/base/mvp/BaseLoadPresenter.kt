@@ -16,8 +16,8 @@ abstract class BaseLoadPresenter<VIEW : BaseLoadView>(
 ) : BasePresenter<VIEW>(view) {
     private val compositeDisposable = CompositeDisposable()
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated() {
+        super.onViewCreated()
         hideAllViewAndDialog()
     }
 

@@ -29,6 +29,11 @@ abstract class BaseMVPFragment<PRESENTER : BasePresenter<*>> : BaseFragment(), B
         lifecycle.addObserver(presenter)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        presenter.onViewCreated()
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         presenter.onSaveInstanceState(outState)

@@ -37,6 +37,9 @@ abstract class BasePresenter<VIEW : BaseView>(
     open fun onDestroy() {
     }
 
+    open fun onViewCreated() {
+    }
+
     open fun onSaveInstanceState(outState: Bundle) {
     }
 }
