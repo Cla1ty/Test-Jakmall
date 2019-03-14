@@ -11,6 +11,5 @@ class JokeRepositoryImpl(
 ) : JokeRepository {
     override fun getRandom() =
         service.getRandom()
-            .map { it.value ?: emptyList() }
-            .map { it.sortedBy { it.id } }!!
+            .map { it.value ?: emptyList() }!!
 }
