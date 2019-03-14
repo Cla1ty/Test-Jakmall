@@ -8,17 +8,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 internal object RetrofitModule {
-    const val BASE_URL = ""
+    const val BASE_URL = "https://api.icndb.com/"
     const val DEBUG = true
 
-    val create: Retrofit by lazy {
+    val retrofit: Retrofit by lazy {
         createRetrofit(
             BASE_URL,
             loggerBody()
         )
     }
 
-    val createForStreaming: Retrofit by lazy {
+    val retrofitForStreaming: Retrofit by lazy {
         createRetrofit(
             BASE_URL,
             loggerHeader()
